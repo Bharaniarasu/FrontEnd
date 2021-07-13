@@ -1,0 +1,52 @@
+
+h1{
+	
+}
+.heading{
+	font-size:35px;
+	color:#fd1717;
+}
+.nav-bar button{
+	font-size:25px;
+	width:250px;
+	color:#800000;
+	background-color:#c0c0c0;
+	padding:1%;
+}
+.nav-bar button:hover{
+	width:260px;
+	font-size:35px;
+	background-color:#800000;
+	color:#c0c0c0;
+	
+}
+table,td,th{
+	Width:1265px;
+	border: 2px solid #808080;
+	padding:4px;
+	text-align:center;
+}
+th{
+	font-size:22px;
+	color:#0000ff;
+}
+td{
+	color:#800080;
+}
+ul{
+	font-size:25px;
+}
+li{
+	font-size:18px;
+}
+.log{
+	width:50%;
+	border:none;
+}
+.log td{
+	font-size:25px;
+	border:0px;
+	
+}
+
+
