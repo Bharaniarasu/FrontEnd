@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Date Time</title>
+<style type="text/css">
+body{
+padding:30px;
+}
+#main {
+	background-color: blue;
+	width: 250px;
+	height: 70px;
+	pading: 80px;
+	border: 100px;
+}
+
+#main2 {
+	width: 200px;
+	height: 50px;
+	padding:30px;
+}
+
+button {
+	background-color: red;
+	color: yellow;
+	border-left: 11%;
+}
+</style>
+</head>
+<body>
+	<div id="main">
+		<br>
+	</div>
+	<div id="main2">
+		<button onclick="start()">Start</button>
+		<button onclick="stop()">Stop</button>
+	</div>
+
+<script type="text/javascript">
+function showtime(){
+date=new Date();
+time=date.toLocaleTimeString();
+second=date.getSeconds();
+box=document.getElementById("main");
+box.innerHTML=time;
+if(second%2==0){
+	box.style.color="red";
+	box.style.backgroundColor="blue";
+	box.style.fontSize="30px";
+}else{
+	box.style.color="blue";
+	box.style.backgroundColor="red";
+	box.style.fontSize="30px";
+}
+}
+function start(){
+	run=setInterval(showtime,1000);
+}
+function stop(){
+	clearInterval(run);
+}
+
+
+</script>
+</body>
+</html>

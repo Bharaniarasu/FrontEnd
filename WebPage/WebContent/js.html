@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome JavaScript</title>
+<script src="Scripts/JavaScript.js"></script>
+</head>
+<body>
+<input type="password" id="name"><br><br>
+<button onclick="method()">Submit</button>
+<h4 id="copy"> </h4>
+<script>
+function method(){
+	memory=document.getElementById("name").value;
+	document.getElementById("copy").innerHTML=memory;
+}
+</script>
+</body>
+</html>

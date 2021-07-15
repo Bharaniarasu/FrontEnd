@@ -52,6 +52,15 @@ background-color:#804040;
 padding: 1px;
 text-align: center;
 }
+p{
+	background-color:yellow;
+	color:red;
+}
+.newclass{
+	width:100px;
+	color:blue;
+	background-color:yellow;
+}
 
 </style>
 </html>
