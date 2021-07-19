@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body {
+	padding: 40px;
+}
+
+#div1 {
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	float: left;
+	margin: 100px;
+}
+
+#div2 {
+	width: 200px;
+	height: 200px;
+	background-color: #66CDAA;
+	float: left;
+	margin: 80px;
+	border-radius:40px;
+	padding:5px;
+	font-size:30px;
+}
+
+#div3 {
+	width: 200px;
+	height: 200px;
+	background-color: blue;
+	float: left;
+	margin: 100px;
+}
+
+#ip1 {
+	background-color: yellow;
+	margin-left: 10px;
+}
+
+#ip2 {
+	background-color: yellow;
+	margin-left: 10px;
+}
+
+button {
+	background-color: white;
+	margin-left: 70px;
+}
+</style>
+</head>
+<body>
+	<div id="div1">
+		<input id="ip1">
+		<button onclick="send()">send1</button>
+	</div>
+	<div id="div2"></div>
+	<div id="div3">
+		<input id="ip2">
+		<button onclick="send()">send</button>
+	</div>
+	<script>
+		function send() {
+			value1 = document.getElementById("ip1").value;
+			value2 = document.getElementById("ip2").value;
+			element = document.createElement("li");
+			if (value1 != "") {
+				text1 = document.createTextNode(value1);
+				element.appendChild(text1);
+				element.style.color = "red";
+				div2 = document.getElementById("div2");
+				div2.appendChild(element);
+				document.getElementById("ip1").value = "";
+			} else if (value2 != "") {
+				text2 = document.createTextNode(value2);
+				element.appendChild(text2);
+				element.style.color = "blue";
+				div2 = document.getElementById("div2");
+				div2.appendChild(element);
+				document.getElementById("ip2").value = "";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#mydiv {
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+	color: red;
+	padding: 20px;
+}
+
+#in {
+	background-color: red;
+	border: 30px;
+	width: 20%;
+}
+
+body {
+	padding: 50px;
+}
+
+button {
+	background-color: green;
+	color: white;
+	border-left: 5000px;
+	padding-left: 5px;
+}
+</style>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<br>
+	<br>
+	<input id="in" placeholder="Enter values">
+	<br>
+	<br>
+	<button onclick="copy()">Send</button>
+
+
+	<script>
+		function copy() {
+			value = document.getElementById("in").value;
+			element = document.createElement("p");
+			text = document.createTextNode(value);
+			element.appendChild(text);
+			mydiv = document.getElementById("mydiv");
+			mydiv.appendChild(element);
+			document.getElementById("in").value="";
+	}
+	</script>
+</body>
+</html>
