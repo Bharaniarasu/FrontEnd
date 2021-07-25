@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Choose the Answer</title>
+<style>
+#qus {
+	width: 100%;
+	height: 100px;
+	font-size: 50px;
+	border: none;
+	color: DarkSlateGray;
+}
+
+input {
+	width: 150px;
+	font-size: 50px;
+}
+
+label {
+	font-size: 30px;
+	color: DarkSlateGray
+}
+
+#click {
+	float: right;
+	width: 120px;
+	height: 40px;
+	font-size: 20px;
+}
+
+#result {
+	font-size: 30px;
+}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: peru;
+}
+</style>
+</head>
+<body>
+	<h1>Choose the correct answer</h1>
+	<input type="text" value="how many planets in our Solar system?" id="qus">
+	<br>
+	<input type="radio" name='q' id="26">
+	<label for="qus">6</label>
+	<input type="radio" name='q' id="25">
+	<label for="qus">10</label>
+	<input type="radio" name='q' id="28">
+	<label for="qus">8</label>
+	<input type="radio" name='q' id="29">
+	<label for="qus">9</label>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="ChooseAnswer3.html">
+		<button onclick="submit()" id="click">Submit</button>
+	</a>
+	<div id="result"></div>
+	<script>
+		function submit() {
+			count=0;
+			x = false;
+			x = document.getElementById("28").checked;
+			if (x == true) {
+				count++;
+				//document.getElementById("click").style.backgroundColor = "lime";
+			} else {
+				//document.getElementById("click").style.backgroundColor = "Red";
+			}
+		}
+	</script>
+</body>
+</html>

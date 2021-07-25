@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Form Validation</title>
+<style type="text/css">
+span {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<form action="ImageSlider.html" onsubmit=" return check()"
+		autocomplete="off">
+		<table align="center">
+			<tr>
+				<td>Name<span>*</span></td>
+				<td><input id="name"></td>
+			</tr>
+			<tr>
+				<td>Place</td>
+				<td><input></td>
+			</tr>
+			<tr>
+				<td>Mail ID</td>
+				<td><input type="email"></td>
+			</tr>
+			<tr>
+				<td>Mobile<span>*</span></td>
+				<td><input id="mobile"></td>
+			</tr>
+		</table>
+		<input type="submit">
+	</form>
+	<script type="text/javascript">
+		function check() {
+			name = document.getElementById("name").value;
+			mobile = document.getElementById("mobile").value;
+			if ((mobile == "") && (name == "")) {
+				alert("Please Enter Name and Mobile");
+				return false;
+			} else if (name == "") {
+				alert("Please Enter Name");
+				return false;
+			} else if (mobile == "") {
+				alert("Please Enter MObile");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>

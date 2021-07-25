@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Use the required characters only</title>
+<style type="text/css">
+table {
+	background-color: chocolate;
+}
+
+td {
+	font-size: 20px;
+}
+
+span {
+	color: blue;
+	font-size: 10px;
+}
+
+input {
+	background-color: yellow;
+}
+
+#sub {
+	float: right;
+	margin-right: 600px;
+	background-color: lime;
+}
+
+.weak {
+	background-color: red;
+}
+
+.intermediate {
+	background-color: yellow;
+}
+
+.strong {
+	background-color: green;
+}
+
+.veryStrong {
+	background-color: lime;
+}
+</style>
+</head>
+<body>
+	<form action="ImageSlider.html" onsubmit=" return check()"
+		autocomplete="off">
+		<table align="center">
+			<tr>
+				<td>Name<span>*use alphabets only!*</span></td>
+				<td><input class="ip"></td>
+			</tr>
+			<tr>
+				<td>Mail ID<span>*use mail format only!*</span></td>
+				<td><input class="ip"></td>
+			</tr>
+			<tr>
+				<td>Mobile<span>*use numbers only!*</span></td>
+				<td><input class="ip"></td>
+			</tr>
+			<tr>
+				<td>Password<span>*use 1 small,caps,num,spcl chars
+						must!*</span></td>
+				<td><input id="pass" onMouseout="mouseOut()"
+					oninput="strenghtCheck()"> <br>
+				<span id="span"></span></td>
+			</tr>
+		</table>
+		<br> <input type="submit" id="sub">
+	</form>
+
+
+	<script type="text/javascript">
+		x = document.getElementsByTagName("input");
+		function check() {
+			x = document.getElementsByTagName("input");
+			alpha = /^[A-Za-z]+$/
+			if (x[0].value == "") {
+				alert("Please Enter Name!!");
+				return false;
+			}
+			if (!alpha.test(x[0].value)) {
+				alert("Please Enter Alphabets only!!");
+				return false;
+			}
+			mailId = /^([0-9a-zA-Z_.])+\@([a-z])+\.([a-z])+$/
+			if (x[1].value == "") {
+				alert("Please Enter Mail Id!!");
+				return false;
+			}
+			if (!mailId.test(x[1].value)) {
+				alert("Please Enter valid Mail Id!!");
+				return false;
+			}
+			mobile = /^([0-9]{2,})+$/
+			if (x[2].value == "") {
+				alert("Please Enter Mobile Number!!");
+				return false;
+			}
+			if (!mobile.test(x[2].value)) {
+				alert("Please Enter 10 Numbers only!!");
+				return false;
+			}
+			pass = /^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$]).{6,})+$/
+			if (x[3].value == "") {
+				alert("Please Enter Password!!");
+				return false;
+			}
+			if (!pass.test(x[3].value)) {
+				alert("Please Enter the valid Password!! (ABcd12@#)");
+				return false;
+			}
+		}
+		function strenghtCheck() {
+			length = x[3].value.length;
+			if (length < 3) {
+				document.getElementById("span").innerHTML = "password Weak";
+				document.getElementById("span").className = "weak";
+			}
+			if ((length > 3) && (length < 5)) {
+				document.getElementById("span").innerHTML = "password intermediate";
+				document.getElementById("span").className = "intermediate";
+			}
+			if ((length > 5) && (length < 8)) {
+				document.getElementById("span").innerHTML = "password Strong";
+				document.getElementById("span").className = "strong";
+			}
+			if (length > 8) {
+				document.getElementById("span").innerHTML = "password Very Strong";
+				document.getElementById("span").className = "veryStrong";
+			}
+		}
+		function mouseOut() {
+			document.getElementById("span").classList.remove("weak",
+					"intermediate", "strong", "veryStrong");
+			document.getElementById("span").innerHTML = "";
+		}
+	</script>
+</body>
+</html>

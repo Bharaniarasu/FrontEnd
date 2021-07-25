@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add/Remove classes by using JavaScript</title>
+<style type="text/css">
+table {
+	width: 800px;
+	height: 600px;
+	margin: 0px auto;
+	background-color: yellow;
+}
+
+td {
+	padding: 10px;
+	boder: 2px solid black;
+}
+
+.class {
+	color: blue;
+	background-color: red;
+	width: 150px;
+	height: 20px;
+	padding: 0px;
+}
+
+input {
+	margin-left: 50px;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td><input class="ip1" onMouseover="mouseOver(0)"
+				onMouseout="mouseOut(0)"></td>
+			<td><p></p></td>
+		</tr>
+		<tr>
+			<td>Place</td>
+			<td><input class="ip1" onMouseover="mouseOver(1)"
+				onMouseout="mouseOut(1)"></td>
+			<td><p></p></td>
+		</tr>
+		<tr>
+			<td>Company</td>
+			<td><input class="ip1" onMouseover="mouseOver(2)"
+				onMouseout="mouseOut(2)"></td>
+			<td><p></p></td>
+		</tr>
+		<tr>
+			<td>Mobile</td>
+			<td><input class="ip1" onMouseover="mouseOver(3)"
+				onMouseout="mouseOut(3)"></td>
+			<td><p></p></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		x = document.getElementsByClassName("ip1");
+		y = document.getElementsByTagName("p");
+		function mouseOver(i) {
+			if (x[i].value == "") {
+				y[i].innerHTML = "Enter this Field!!";
+				y[i].className = "class";
+
+			}
+		}
+		function mouseOut(i) {
+			y[i].innerHTML = "";
+			y[i].classList.remove("class");
+		}
+	</script>
+</body>
+</html>
